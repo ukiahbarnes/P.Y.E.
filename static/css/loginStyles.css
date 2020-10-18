@@ -16,6 +16,10 @@ body {
 	margin: -20px 0 50px;
 }
 
+.description {
+	margin-left: 25%;
+	margin-right: 25%;
+}
 h1 {
 	font-weight: bold;
 	margin: 0;

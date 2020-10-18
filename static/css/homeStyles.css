@@ -3,12 +3,12 @@ body{
 }
 
 #boxRCorner {
-    position: sticky;
+
     border-radius: 3vw;
     background: #80aaff;
     padding: 1vh 1vw 1vh 1vw;
     width: 95vw;
-    height: 95vh;
+    height: 100vh;
     margin: 1vw;
 }
 
@@ -31,7 +31,7 @@ body{
 }
 .assignmentsTitle {
     grid-area: assignments;
-    font-size: 5vw;
+    font-size: 3.5vw;
     font-family: monospace, 'Courier New', Courier;
     text-align: center;
     color: #ffffff;
@@ -80,11 +80,15 @@ body{
     padding: 2vw;
     margin: 1.5vw;
     width: 40vw;
-    float: left;
+    float:left;
     box-shadow: 
          inset 0 -3em 3em rgba(0,0,0,0.1), 
                0 0  0 2px rgb(255,255,255),
                0.3em 0.3em 1em rgba(0,0,0,0.3);
     font-family: 'Courier New', Courier, monospace;
 
+}
+
+.assignmentSection {
+    grid-area: assignments;
 }

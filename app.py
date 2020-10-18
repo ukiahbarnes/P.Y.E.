@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request, session, flash
+from flask import Flask, render_template, redirect, url_for, request, session,flash
 import os
 from datetime import timedelta
 from flask_sqlalchemy import SQLAlchemy
@@ -42,17 +42,6 @@ class Item(db.Model):
 
 
 # db.create_all()
-# ukiah = User(username="ukiah", password="yousaf")
-# db.session.add(ukiah)
-# db.session.commit()
-# math = Class(name="math", user_id=1)
-# item = Item(name="item", class_id=1, date = "2011-10-10")
-# # db.session.add(math)
-# db.session.add(item)
-# db.session.commit()
-#testing
-
-
 
 def getItemsByClass(course):
     format_str = "%Y-%m-%d"  # The format
@@ -65,7 +54,7 @@ def getItemsByClass(course):
     dates.sort()
     for date in dates:
         item = (
-            db.session.query(Item).filter_by(date=date.strftime(format_str)).first()
+            db.session.query(Item).filter_by(class_id=course.id).filter_by(date=date.strftime(format_str)).first()
         )
         items.append(item)
     return items
@@ -128,6 +117,9 @@ def do_admin_login():
 @app.route("/create_account", methods=["POST"])
 def create_account():
     username = request.form["username"]
+    found_user = db.session.query(User).filter_by(username=username).first()
+    if found_user:
+        return render_template("error404.html")
     password = request.form["password"]
     user = User(username=username, password=password)
     db.session.add(user)
@@ -177,7 +169,8 @@ def create_item():
     date = request.form["date"]
     db.session.add(Item(name=item_name,date=date,class_id=db.session.query(Class).filter_by(name=classname).first().id))
     db.session.commit()
-    return home()
+    return redirect("/home")
+
 
     
 @app.route("/create_class", methods=["POST","GET"])
@@ -188,7 +181,8 @@ def create_class():
     user_id = db.session.query(User).filter_by(username=session["username"]).first().id
     db.session.add(Class(name=classname, user_id=user_id))
     db.session.commit()
-    return home()
+    return redirect("/home")
+
 
 
 if __name__ == "__main__":
