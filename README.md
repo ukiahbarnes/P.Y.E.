@@ -5,8 +5,3 @@ Personalize Your Education: A simple time-management app to help virtual student
 Database creation is done in app.py; for first time creation, uncomment line 43: "db.create_all()". 
 Then, 
 flask run
-
-## Environment Variables
-You will need the following environment variables to get the app running: 
-DATABASE_URL,
-SECRET_KEY
