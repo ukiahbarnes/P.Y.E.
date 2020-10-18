@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/addClassStyles.css" type="text/css">{% endblock %}
+
+
+{% block body %}
+
+<div class="container" id="container">
+    <form method="POST" id="addClass" action="/create_class">
+        <h1>Here you can add your current classes down below</h1>
+        <img class="mascot" src="./static/images/mascot5.png" alt="Red cup" style="width:16vw;height:20vh;">
+        <input type="text" name="classname" placeholder="Class Name" />
+        <button type="submit">Add Class</button>
+    </form>
+</div>
+{% endblock %}

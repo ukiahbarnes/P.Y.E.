@@ -1,1 +1,10 @@
 # P.Y.E.
+Personalize Your Education: A simple time-management app to help virtual students to keep track of assignments and upcoming assessments using Python, Flask, and a SQLite relational database in the back-end and a fully designed front-end with HTML5 and CSS. Authentication and account creation is also implemented.
+
+## Running the app
+flask run
+
+## Environment Variables
+You will need the following environment variables to get the app running: 
+DATABASE_URL,
+SECRET_KEY

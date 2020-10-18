@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/homeStyles.css" type="text/css">{% endblock %}
+
+
+{% block body %}
+<div id="boxRCorner">
+<div class="sortContainer">
+    <h1 class="welcome">Welcome back, {{ username }}!</h1>
+
+
+
+    <section>
+        <h2 class="assignmentsTitle">Upcoming Assignments</h2>
+    
+     
+    <dl class="myClasses">
+        {% for class, assignment in dict.items() %}
+        <div class="sortedAssignments">
+            <dt class="className">{{ class.name }}</dt>
+            
+            {%- for task in assignment %}
+                <dd class="tasks">{{ task.name -}}<h> </h> {{ task.date }}</dd>
+            {%  endfor -%}
+        </div>
+    </dl>
+   
+    {% endfor %}
+
+    </section>
+
+    
+    <!-- <a href="#showAll" class="showAllAssignments">Show All</a> -->
+    
+</div>
+</div>
+{% endblock %}
+
+

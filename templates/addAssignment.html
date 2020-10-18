@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/addAssignmentStyles.css" type="text/css">{% endblock %}
+
+
+{% block body %}
+<div class="container" id="container">
+    <form method="POST" id="addClass" action="/create_item">
+        <h1>On this page you can use the scroll down bar to select a class, then write in your assignment, and add a due date</h1>
+        <img class="mascot" src="./static/images/mascot4.png" alt="Red cup" style="width:16vw;height:20vh;">
+        <select name="classname" placeholder="Choose a Class">
+            {% for class,key in dict.items() %}
+
+            <option value="{{ class.name }}"> {{ class.name }}</option>
+
+            {% endfor %}
+        </select>
+        <!-- <input type="dropdown" name="className" placeholder="Class" /> -->
+        <input type="text" name="name" placeholder="Assignment" />
+        <input id="date" type="date" name="date">
+        <button type="submit">Create</button>
+    </form>
+</div>
+{% endblock %}

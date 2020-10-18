@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Signup page{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/signupStyles.css" type="text/css">{% endblock %}
+{% block body %}
+<div class="container" id="container">
+    <div class="form-container sign-in-container">
+        <form action="/create_account" method="POST">
+            <h1>Create your account</h1>
+                <input type="text" name="username" placeholder="Username" />
+                <input type="password" name="password" placeholder="Password" />
+                <button>Sign Up</button>
+    </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay"> 
+                <img class="mascot" src="./static/images/mascot.png" alt="Red cup" style="float:right;width:60vw;height:52vh;">
+        </div> 
+    </div>
+</div>
+{% endblock %}

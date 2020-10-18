@@ -1,26 +1,51 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}Login Page{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/loginStyles.css" type="text/css">{% endblock %}
+{% block body %}
+{% block navigation %}{% endblock %}
 
-<head></head>
-<link rel="stylesheet" href="/static/style.css" type="text/css">
-&#123;% block body %&#125;
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form action="/login">
+            <h1>Create Account</h1>
+            <span>registration</span>
+            <input type="text" placeholder="Name" />
+            <input type="user" placeholder="Username" />
+            <input type="password" placeholder="Password" />
+            <button>Sign Up</button>
+            </form>
+     </div>
+            
+     <div class="form-container sign-in-container">
+            <form action="/login" method="POST">
+                <h1>Sign in</h1>
+                    <input type="text" name="username" placeholder="Username" />
+                    <input type="password" name="password" placeholder="Password" />
+                    <button>Sign In</button>
+        </form>
+     </div>
+    
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                	<p>To keep connected with us please login with your personal info</p>
+                <button class="ghost" id="signIn">Sign In</button>
+            </div>
+    <div class="overlay-panel overlay-right">
+        <img class="mascot" src="./static/images/mascot2.png" alt="Red cup" style="width:16vw;height:20vh;">
+		<h1>P.Y.E. says:</h1>
+        <h1>Hello, Friend!</h1>
+            <p>Enter your personal details to start planning with us</p>
+            <a class="create_account" href="/signup">
+                <button class="ghost" id="signUp" >Sign up</button>
+            </a>
 
+    </div>
+        </div>
+    </div>
+</div>
 
-<form action="/login" method="POST">
-	<div class="login">
-		<div class="login-screen">
-			<div class="app-title">
-				<h1>Login</h1>
-			</div>
-			<div class="login-form">
-				<div class="control-group">
-					<input type="text" class="login-field" value="" placeholder="username" name="username">
-					<label class="login-field-icon fui-user" for="login-name"></label></div>
-				<div class="control-group">
-					<input type="password" class="login-field" value="" placeholder="password" name="password">
-					<label class="login-field-icon fui-lock" for="login-pass"></label></div>
-				<input type="submit" value="Log in" class="btn btn-primary btn-large btn-block">
+{% block logout %}{% endblock %}
 
-			</div>
-		</div>
-	</div>
-</form>
+{% endblock %}

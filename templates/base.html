@@ -1,10 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>{%block title %}{% endblock %}</title>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="/static/css/baseStyles.css" type="text/css">
+        {% block styles %}{% endblock %}
     </head>
-    {% %}
     <body>
-        <h1>Personalize YOUR Education</h1>
+        {% block heading %}<h1 class="mainTitle">Personalize Your Education</h1>{% endblock%}
+        {% block navigation %}
+  
+  
+    <div class="html-container">
+      <div class="html-section">
+        <div class="html-project">
+          <div class="navigation">
+            <nav>
+              <ul class="nav-type">
+                <li><a href="/home"  class="active">Home</a></li>
+                <li><a href="/addClass"  class="active1">Add a Class</a></li>
+                <li><a href="/addAssignment"  class="active2">Add an Assignment</a></li>
+                <li><a href="/logout" class="active3">Logout</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <noscript>
+      <div class="first-line">
+        <div class="linear">
+          <div class="line-w5">
+            
+          </div>
+        </div>
+      </div>
+      </noscript>
+<template>
+      <div class="flash-fluid">
+        <div class="flash-time">
+          <div class="flash-GIF">
+            
+          </div>
+        </div>
+       </div>
+</template>
+<noscript>     
+      <div class="cyrcle-center">
+        <div class="radial-cyrcle">
+          
+        </div>
+      </div>
+</noscript>
+    </div>
+    
+
+  
+
+        {% endblock %}
+
+
+        {% block body %}{% endblock %}
+
+
     </body>
 </html>

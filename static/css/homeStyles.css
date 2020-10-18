@@ -1,0 +1,90 @@
+body{
+    background: #ffffff;
+}
+
+#boxRCorner {
+    position: sticky;
+    border-radius: 3vw;
+    background: #80aaff;
+    padding: 1vh 1vw 1vh 1vw;
+    width: 95vw;
+    height: 95vh;
+    margin: 1vw;
+}
+
+  .mascot {
+      grid-area: welcome;
+
+  }
+
+
+.sortContainer {
+    display: grid;
+    grid-template-areas: 
+    "title title"
+    "assignments assignments";
+}
+.welcome {
+    grid-area: title;
+    text-align: center;
+    color: #ffffff;
+}
+.assignmentsTitle {
+    grid-area: assignments;
+    font-size: 5vw;
+    font-family: monospace, 'Courier New', Courier;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 1px 0 #ccc,
+                 0 2px 0 #c9c9c9,
+                 0 3px 0 #bbb,
+                 0 4px 0 #b9b9b9,
+                 0 5px 0 #aaa,
+                 0 6px 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.3),
+                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15);
+}
+.tasks{
+    margin-right: 3vw;
+    padding: 1vh;
+}
+
+.className {
+    font-size: 3.5vw;
+    color: #ff437c;
+    font-weight: 200%;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 4px 4px 2px rgba(0, 0, 0, 1);
+    
+}
+
+.myClasses {
+    grid-area: assignments;
+    font-family: 'Courier New', Courier, monospace;
+
+    
+    
+}
+.class {
+    grid-area: assignments;
+    width: 80vw;
+}
+.sortedAssignments {
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #dddddd;   
+    padding: 2vw;
+    margin: 1.5vw;
+    width: 40vw;
+    float: left;
+    box-shadow: 
+         inset 0 -3em 3em rgba(0,0,0,0.1), 
+               0 0  0 2px rgb(255,255,255),
+               0.3em 0.3em 1em rgba(0,0,0,0.3);
+    font-family: 'Courier New', Courier, monospace;
+
+}
